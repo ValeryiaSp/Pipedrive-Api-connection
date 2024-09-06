@@ -26,6 +26,10 @@ body {
   
 }
 
+h3 {
+  padding: 10px 0;
+}
+
 .section {
   background-color: #ffffff;
   padding: 20px;
@@ -35,21 +39,30 @@ body {
   max-width: 45%;
 }
 
-.section label {
-  font-size: 1.2em;
-  color: #333;
-  margin-bottom: 10px;
-  display: block;
-  text-align: center;
-  font-weight: bold;
+.splitted_items {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
 }
 
 .section__item {
   margin-bottom: 15px;
   position: relative;
+  flex: 1;
 }
 
-.section__item input {
+.section__item input  {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.section__item select {
   width: 100%;
   padding: 10px;
   font-size: 1em;
@@ -81,38 +94,18 @@ body {
   color: #333;
 }
 
-.dropdown-arrow {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-size: 16px;
-  color: #333;
-}
-
-.dropdown-options {
-  display: none; /* Скрываем список по умолчанию */
-  position: absolute;
-  top: 110%;
-  left: 0;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-.dropdown-container.active .dropdown-options {
-  display: block;
-}
-
 .job_description {
   height: 10vh;
 }
 
-button {
+.buttons {
+  display: flex;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+}
+
+.buttons__item {
   background-color: #b9c3d8;
   border-radius: 100px;
   color: #292929;
@@ -131,4 +124,69 @@ button {
 button:hover {
   cursor: pointer;
   background-color: #3c3370;
+  color: #e6d7d7;
+}
+
+.hidden_loader {
+  display:none;
+}
+
+/* Popup styles */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-header {
+  padding: 0 0 20px;
+}
+
+.popup-content {
+  background: #ece3e3;
+  padding: 30px;
+  border-radius: 5px;
+  position: relative;
+  width: 80%;
+  max-width: 650px;
+}
+
+.popup-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.hidden {
+  display:none
+}
+
+.popup_btn {
+  background-color: #b9c3d8;
+  border-radius: 100px;
+  color: #0d4235;
+  border: 2px solid #01220e;
+  padding: 15px 45px;
+  font-family: Arial, sans-serif;;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  line-height: 130%;
+  font-style: normal;
+  transition: all 0.3s ease-in-out;
+
 }

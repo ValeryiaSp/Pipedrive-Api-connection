@@ -10,105 +10,133 @@
 </head>
 
 <body class="body">
-  <section class="blocks">
-    <div class="section">
-      <label for="title">
-        Client Details
-      </label>
-      <div class="section__item">
-        <input id="firstName" type="text" placeholder="First Name" required>
-      </div>
-      <div class="section__item">
-        <input id="lastName" type="text" placeholder="Last Name" required>
-      </div>
-      <div class="section__item">
-        <input id="phone" type="tel" placeholder="Phone" required>
-      </div>
-      <div class="section__item">
-        <input id="email" type="email" placeholder="Email (optional)">
-      </div>
-    </div>
 
+  <button data-popup class="popup_btn">Fill the form</button>
 
-    <div class="section">
-      <label for="title">
-        Job Details
-      </label>
-      <div class="section__item dropdown-container">
-        <input id="jobType" class="dropdown-input" type="text" placeholder="Job type">
-        <span class="dropdown-arrow">▼</span>
-        <div class="dropdown-options">
-          <div>Job 1</div>
-          <div>Job 2</div>
-          <div>Job 3</div>
+  <div class="popup hidden">
+    <div class="popup-content">
+      <div class="popup-header">
+        <div class="popup-title">Create new job</div>
+        <div class="popup-close" data-close>&times;</div>
+      </div>
+
+      <form id="form" action="" method="post" class="blocks">
+        <div class="section">
+          <h3>
+            Client Details
+          </h3>
+          <div class="splitted_items">
+            <div class="section__item">
+              <input name="firstName" id="firstName" type="text" placeholder="First Name" required>
+            </div>
+            <div class="section__item">
+              <input name="lastName" id="lastName" type="text" placeholder="Last Name" required>
+            </div>
+          </div>
+          <div class="section__item">
+            <input name="phone" id="phone" type="tel" placeholder="Phone" required>
+          </div>
+          <div class="section__item">
+            <input name="email" id="email" type="email" placeholder="Email (optional)">
+          </div>
         </div>
-      </div>
-      <div class="section__item">
-        <input id="jobSource" class="dropdown-input" type="text" placeholder="Job source">
-        <span class="dropdown-arrow">▼</span>
-        <div class="dropdown-options">
-          <div>Job source 1</div>
-          <div>Job source 2</div>
-          <div>Job source 3</div>
+
+        <div class="section">
+          <h3 for="title">
+            Job Details
+          </h3>
+          <div class="section__item dropdown-container">
+            <select name="jobType" id="jobType" class="dropdown-input">
+              <option value="">Job type</option>
+              <option value="">Job 1</option>
+              <option value="">Job 2</option>
+              <option value="">Job 3</option>
+              <option value="">Job 4</option>
+            </select>
+          </div>
+
+          <div class="section__item">
+            <select name="jobSource" id="jobSource" class="dropdown-input">
+              <option value="">Job source</option>
+              <option value="">Job source 1</option>
+              <option value="">Job source 2</option>
+              <option value="">Job source 3</option>
+              <option value="">Job source 4</option>
+            </select>
+          </div>
+          <div class="section__item">
+            <input name="jobDescription" id="jobDescription" class="job_description" type="text"
+              placeholder="Job descriptoin(optional)">
+          </div>
         </div>
-      </div>
-      <div class="section__item">
-        <input id="jobDescription" class="job_description" type="text" placeholder="Job descriptoin(optional)">
-      </div>
+
+        <div class="section">
+          <h3>
+            Service location
+          </h3>
+          <div class="section__item">
+            <input name="adress" id="adress" class="" type="text" placeholder="Adress" required>
+          </div>
+          <div class="section__item">
+            <input name="city" id="city" class="" type="text" placeholder="City" required>
+          </div>
+          <div class="section__item">
+            <input name="state" id="state" class="" type="text" placeholder="State" required>
+          </div>
+          <div class="splitted_items">
+            <div class="section__item">
+              <input name="zip" id="zip" class="" type="text" placeholder="Zip-code" required>
+            </div>
+            <div class="section__item">
+              <select name="area" id="area" class="">
+                <option value="">Area</option>
+                <option value="">Area 1</option>
+                <option value="">Area 2</option>
+                <option value="">Area 3</option>
+                <option value="">Area 4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>
+            Scheduled
+          </h3>
+          <div class="section__item">
+            <input name="date" id="date" class="" type="date" placeholder="Start date" required>
+          </div>
+          <div class="splitted_items">
+            <div class="section__item">
+              <input name="startTime" id="startTime" class="" type="time" placeholder="Start time" required>
+            </div>
+            <div class="section__item">
+              <input name="endTime" id="endTime" class="" type="time" placeholder="End time" required>
+            </div>
+          </div>
+          <div class="section__item">
+            <input name="test" id="test" class="" type="email" placeholder="Test select">
+          </div>
+        </div>
+
+        <div class="buttons">
+
+          <button class="buttons__item" type="submit">
+            Create job
+          </button>
+          <div id="loader" class="hidden_loader">Sending...</div>
+
+          <button class="buttons__item" id="saveButton">
+            Save info
+          </button>
+
+        </div>
+
+      </form>
+
     </div>
+  </div>
 
-    <div class="section">
-      <label for="title">
-        Service location
-      </label>
-      <div class="section__item">
-        <input id="adress" class="" type="text" placeholder="Adress" required>
-      </div>
-      <div class="section__item">
-        <input id="city" class="" type="text" placeholder="City" required>
-      </div>
-      <div class="section__item">
-        <input id="state" class="" type="text" placeholder="State" required>
-      </div>
-      <div class="section__item">
-        <input id="zip" class="" type="text" placeholder="Zip-code" required>
-      </div>
-      <div class="section__item">
-        <input id="area" class="" type="text" placeholder="Area" required>
-      </div>
-    </div>
-
-    <div class="section">
-      <label for="title">
-        Scheduled
-      </label>
-      <div class="section__item">
-        <input id="date" class="" type="date" placeholder="Start date" required>
-      </div>
-      <div class="section__item">
-        <input id="time" class="" type="time" placeholder="Start time" required>
-      </div>
-      <div class="section__item">
-        <input id="end" class="" type="time" placeholder="End time" required>
-      </div>
-      <div class="section__item">
-        <input id="test" class="" type="email" placeholder="Test select">
-      </div>
-    </div>
-
-    <section class="buttons">
-
-      <button class="buttons__item" onclick="sendDataToPipedrive()">
-        Create job
-      </button>
-
-      <button class="buttons__item">
-        Save info
-      </button>
-
-    </section>
-
-  </section>
 
   <script src="./script.js"></script>
 </body>
