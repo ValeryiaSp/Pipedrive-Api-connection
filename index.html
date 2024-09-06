@@ -16,10 +16,10 @@
         Client Details
       </label>
       <div class="section__item">
-        <input id="first_name" type="text" placeholder="First Name" required>
+        <input id="firstName" type="text" placeholder="First Name" required>
       </div>
       <div class="section__item">
-        <input id="second_name" type="text" placeholder="Last Name" required>
+        <input id="lastName" type="text" placeholder="Last Name" required>
       </div>
       <div class="section__item">
         <input id="phone" type="tel" placeholder="Phone" required>
@@ -35,7 +35,7 @@
         Job Details
       </label>
       <div class="section__item dropdown-container">
-        <input class="dropdown-input" type="text" placeholder="Job type">
+        <input id="jobType" class="dropdown-input" type="text" placeholder="Job type">
         <span class="dropdown-arrow">▼</span>
         <div class="dropdown-options">
           <div>Job 1</div>
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="section__item">
-        <input class="dropdown-input" type="text" placeholder="Job source">
+        <input id="jobSource" class="dropdown-input" type="text" placeholder="Job source">
         <span class="dropdown-arrow">▼</span>
         <div class="dropdown-options">
           <div>Job source 1</div>
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="section__item">
-        <input id="job_description" class="job_description" type="text" placeholder="Job descriptoin(optional)">
+        <input id="jobDescription" class="job_description" type="text" placeholder="Job descriptoin(optional)">
       </div>
     </div>
 
@@ -98,7 +98,7 @@
 
     <section class="buttons">
 
-      <button class="buttons__item">
+      <button class="buttons__item" onclick="sendDataToPipedrive()">
         Create job
       </button>
 
